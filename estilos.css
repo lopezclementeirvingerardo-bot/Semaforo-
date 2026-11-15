@@ -57,7 +57,7 @@ body {
 }
 CSS
 .logo {
-  height: clamp(50px, 6vw, 90px); /* Sube estos valores para hacerlos más grandes */
+  height: clamp(40px, 4.6vw, 60px); /* Sube estos valores para hacerlos más grandes */
   width: auto;
   object-fit: contain;
   background: #ffffffcc;
