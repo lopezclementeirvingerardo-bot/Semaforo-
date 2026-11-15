@@ -1,4 +1,4 @@
-:raíz{
+:root {
   --azul: #3f6fb5;
   --blanco: #ffffff;
   --gris: #e5e7eb;
@@ -7,195 +7,213 @@
   --rojo: #e53935;
   --negro: #111827;
 }
-*{ box-sizing: border-box; }
-
-cuerpo{
-  margen: 0;
-  fondo: #f5f6f8;
-  familia de fuentes: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f5f6f8;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
   color: var(--negro);
-  mostrar: cuadrícula;
-  elementos de lugar: centro;
-  altura mínima: 100svh;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
 }
 
-/* Cártel general */
-.cartel{
-  ancho: clamp(360px, 94vw, 1200px);
-  fondo: var(--blanco);
-  radio de borde: 10px;
+/* Cartel general */
+.cartel {
+  width: clamp(360px, 94vw, 1200px);
+  background: var(--blanco);
+  border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  desbordamiento: oculto;
+  overflow: hidden;
 }
 
 /* Encabezado azul */
-.header-aviso{
-  fondo: var(--azul);
+.header-aviso {
+  background: var(--azul);
   color: var(--blanco);
-  relleno: clamp(32px, 6vw, 72px) 16px;
-  alineación de texto: centro;
-  posición: relativa;
+  padding: clamp(32px, 6vw, 72px) 16px;
+  text-align: center;
+  position: relative;
 }
-.header-aviso h1{
-  margen: 0;
-  grosor de fuente: 900;
+.header-aviso h1 {
+  margin: 0;
+  font-weight: 900;
   font-size: clamp(72px, 14vw, 160px);
-  espaciado entre letras: 8px;
-  transformación de texto: mayúsculas;
-  interlineado: 1,05;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  line-height: 1.05;
 }
 
 /* Logotipos superiores */
-.logos{
-  posición: absoluta;
-  superior: abrazadera(12px, 1.8vw, 24px);
-  izquierda: 16px; derecha: 16px;
-  pantalla: flexible;
-  justificar-contenido: espacio-entre;
-  alinear-elementos: centro;
-  espacio: 12px;
+.logos {
+  position: absolute;
+  top: clamp(12px, 1.8vw, 24px);
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
-.logo{
-  altura: clamp(40px, 4.6vw, 60px);
-  ancho: automático;
-  objeto-ajustar: contener;
-  fondo: #ffffffcc;
-  relleno: 6px 8px;
-  radio de borde: 8px;
+.logo {
+  height: clamp(40px, 4.6vw, 60px);
+  width: auto;
+  object-fit: contain;
+  background: #ffffffcc;
+  padding: 6px 8px;
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,.15);
 }
 
 /* Texto bajo AVISO */
-.texto-protocolo{
-  relleno: 20px clamp(16px, 3vw, 24px) 10px;
-  mostrar: cuadrícula;
-  elementos de lugar: centro;
+.texto-protocolo {
+  padding: 20px clamp(16px, 3vw, 24px) 10px;
+  display: grid;
+  place-items: center;
 }
-.texto-protocolo p{
-  margen: 0;
-  grosor de fuente: 800;
+.texto-protocolo p {
+  margin: 0;
+  font-weight: 800;
   font-size: clamp(22px, 3.2vw, 32px);
-  interlineado: 1,5;
-  espaciado entre letras: 0,6px;
-  ancho máximo: clamp(560px, 76vw, 980px);
-  ancho: contenido máximo;
-  margen: 0 automático;
-  alineación de texto: centro;
-  ajuste de texto: equilibrio;
+  line-height: 1.5;
+  letter-spacing: 0.6px;
+  max-width: clamp(560px, 76vw, 980px);
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: balance;
 }
 
 /* ===== Sección semáforo ===== */
-.sección-semaforo{
-  relleno: 16px 16px 8px;
-  pantalla: flexible;
-  flex-direction: columna;
-  alinear-elementos: centro;
+.seccion-semaforo {
+  padding: 16px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   --row-w: clamp(620px, 70vw, 1000px);
   --col-igual: 44px;
   --col-etiqueta-min: 0px;
 }
-.fila-indicador{
-  visualización: cuadrícula en línea;
-  ancho: contenido máximo;
-  margen: 0 automático;
-  columnas de plantilla de cuadrícula:
-    abrazadera(180px, 24vw, 300px)
-    var(--col-igual)
-    minmax(var(--col-etiqueta-min), 1fr);
-  alinear-elementos: centro;
-  justificar-elementos: centro;
-  espacio entre columnas: 20px;
-  relleno: 12px 0 22px;
+.fila-indicador {
+  display: inline-grid;
+  width: max-content;
+  margin: 0 auto;
+  grid-template-columns: clamp(180px, 24vw, 300px) var(--col-igual) minmax(var(--col-etiqueta-min), 1fr);
+  align-items: center;
+  justify-items: center;
+  column-gap: 20px;
+  padding: 12px 0 22px;
 }
 
 /* Luces */
-.luz{
-  ancho: clamp(180px, 24vw, 300px);
-  altura: clamp(180px, 24vw, 300px);
-  radio de borde: 50%;
-  fondo: var(--gris);
+.luz {
+  width: clamp(180px, 24vw, 300px);
+  height: clamp(180px, 24vw, 300px);
+  border-radius: 50%;
+  background: var(--gris);
   box-shadow: inset 0 0 18px rgba(0,0,0,0.2);
-  transición: transformación .16s de suavidad, sombra de caja .16s de suavidad, fondo .2s de suavidad;
+  transition: transform .16s ease, box-shadow .16s ease, background .2s ease;
 }
-.luz-verde.activa{ fondo: var(--verde); sombra de cuadro: 0 0 24px rgba(6,193,103,.6); transformar: escala (1.02); }
-.luz-roja.activa{ fondo: var(--rojo); sombra de cuadro: 0 0 24px rgba(229,57,53,.6); transformar: escala (1.02); }
+.luz-verde.activa {
+  background: var(--verde);
+  box-shadow: 0 0 24px rgba(6,193,103,.6);
+  transform: scale(1.02);
+}
+.luz-roja.activa {
+  background: var(--rojo);
+  box-shadow: 0 0 24px rgba(229,57,53,.6);
+  transform: scale(1.02);
+}
 
 /* Signo "=" */
-.igual{
-  ancho: var(--col-igual);
-  altura: 28px;
-  posición: relativa;
-  justificarse-a-uno-mismo: centro;
+.igual {
+  width: var(--col-igual);
+  height: 28px;
+  position: relative;
+  justify-self: center;
 }
-.igual::antes, .igual::después{
-  contenido: "";
-  posición: absoluta;
-  izquierda: 0; derecha: 0;
-  altura: 10px;
-  fondo: #111827;
-  radio de borde: 3px;
+.igual::before,
+.igual::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #111827;
+  border-radius: 3px;
 }
-.igual::before{ top: 0; }
-.igual::after{ bottom: 0; }
+.igual::before { top: 0; }
+.igual::after { bottom: 0; }
 
 /* Etiqueta */
-.etiqueta{
-  pantalla: flexible;
-  alinear-elementos: centro;
-  espacio en blanco: ahora rap;
+.etiqueta {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
-.texto-grande{
+.texto-grande {
   font-size: clamp(22px, 6vw, 34px);
-  grosor de fuente: 800;
+  font-weight: 800;
 }
 
 /* Botones y pie */
-.acciones{ padding: 8px 16px 16px; display: grid; gap: 10px; }
-.btn{
-  apariencia: ninguna;
-  borde: ninguno;
-  radio de borde: 8px;
-  relleno: 12px 16px;
-  grosor de fuente: 700;
-  cursor: puntero;
-  transición: transformar .1s de facilidad, sombra de caja .1s de facilidad;
+.acciones {
+  padding: 8px 16px 16px;
+  display: grid;
+  gap: 10px;
 }
-.btn.primario{ background: linear-gradient(180deg, #2f7ae5, #1f5fb9); color: #fff; box-shadow: 0 6px 12px rgba(47,122,229,.35); }
-.btn.primario:hover{ transform: translateY(-1px); }
-.btn.secundario{ background: #cfd2d6; color: #1f2937; }
-.pastel{
-  relleno: 10px 16px;
-  alineación de texto: centro;
+.btn {
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.btn.primario {
+  background: linear-gradient(180deg, #2f7ae5, #1f5fb9);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(47,122,229,.35);
+}
+.btn.primario:hover { transform: translateY(-1px); }
+.btn.secundario {
+  background: #cfd2d6;
+  color: #1f2937;
+}
+.pie {
+  padding: 10px 16px;
+  text-align: center;
   color: var(--gris-osc);
-  tamaño de fuente: .85rem;
+  font-size: .85rem;
 }
 
 /* ===== Tableta (≥768px) ===== */
 @media (min-width: 768px) {
-  .cartel{ ancho: clamp(540px, 94vw, 1200px); }
-  .header-aviso{ padding: clamp(36px, 6vw, 84px) 20px; }
-  .header-aviso h1{ font-size: clamp(80px, 14vw, 160px); letter-spacing: 8px; }
-  .logos .logo{ altura: clamp(40px, 4.6vw, 60px); }
-  .texto-protocolo p{ font-size: clamp(24px, 3vw, 34px); max-width: clamp(640px, 70vw, 1100px); }
-  .seccion-semaforo{ --row-w: clamp(700px, 72vw, 1100px); --col-igual: 48px; }
-  .fila-indicador{ column-gap: 22px; padding: 14px 0 24px; }
-  .igual{ altura: 28px; }
-  .igual::before, .igual::after{ altura: 10px; }
-  .etiqueta .texto-grande{ tamaño de fuente: abrazadera(26px, 4.8vw, 42px); }
-  .acciones{ grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 22px 20px; }
-  .btn{ font-size: clamp(1rem, 2.2vw, 1.125rem); padding: 14px 18px; }
-  .pie{ font-size: 1rem; padding: 12px 22px; }
+  .cartel { width: clamp(540px, 94vw, 1200px); }
+  .header-aviso { padding: clamp(36px, 6vw, 84px) 20px; }
+  .header-aviso h1 { font-size: clamp(80px, 14vw, 160px); letter-spacing: 8px; }
+  .logos .logo { height: clamp(40px, 4.6vw, 60px); }
+  .texto-protocolo p { font-size: clamp(24px, 3vw, 34px); max-width: clamp(640px, 70vw, 1100px); }
+  .seccion-semaforo { --row-w: clamp(700px, 72vw, 1100px); --col-igual: 48px; }
+  .fila-indicador { column-gap: 22px; padding: 14px 0 24px; }
+  .igual { height: 28px; }
+  .igual::before, .igual::after { height: 10px; }
+  .etiqueta .texto-grande { font-size: clamp(26px, 4.8vw, 42px); }
+  .acciones { grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 22px 20px; }
+  .btn { font-size: clamp(1rem, 2.2vw, 1.125rem); padding: 14px 18px; }
+  .pie { font-size: 1rem; padding: 12px 22px; }
 }
 
 /* ===== Ordenador de sobremesa / iPad Pro (≥1024px) ===== */
 @media (min-width: 1024px) {
-  .cartel{ ancho: clamp(640px, 90vw, 1300px); }
-  .header-aviso{ padding: clamp(40px, 7vw, 96px) 24px; }
-  .header-aviso h1{ font-size: clamp(96px, 12vw, 180px); letter-spacing: 10px; }
-  .logos .logo{ altura: clamp(44px, 4vw, 64px); }
-  .texto-protocolo p{ font-size: clamp(26px, 2.6vw, 36px); max-width: clamp(700px, 62vw, 1200px); }
-  .seccion-semaforo{ --row-w: abrazadera(760px, 68vw, 1200px); --col-igual: 52px; }
-  .fila-indicador{ column-gap: 24px; }
-  .etiqueta .texto-grande{ tamaño de fuente: abrazadera(30px, 3.8vw, 48px); }
-  .btn{ font-size: clamp(1.05rem, 1.8vw, 1.2rem); padding: 16px 20px; }
+  .cartel { width: clamp(640px, 90vw, 1300px); }
+  .header-aviso { padding: clamp(40px, 7vw, 96px) 24px; }
+  .header-aviso h1 { font-size: clamp(96px, 12vw, 180px); letter-spacing: 10px; }
+  .logos .logo { height: clamp(44px, 4vw, 64px); }
+  .texto-protocolo p { font-size: clamp(26px, 2.6vw, 36px); max-width: clamp(700px, 62vw, 1200px); }
+  .seccion-semaforo { --row-w: clamp(760px, 68vw, 1200px); --col-igual: 52px; }
+  .fila-indicador { column-gap: 24px; }
+  .etiqueta .texto-grande { font-size: clamp(30px, 3.8vw, 48px); }
+  .btn { font-size: clamp(1.05rem, 1.8vw, 1.2rem); padding: 16px 20px; }
 }
